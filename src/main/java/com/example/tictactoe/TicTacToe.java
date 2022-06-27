@@ -35,7 +35,7 @@ public class TicTacToe extends Application {
         for (int i = 0; i < 9; i++) {
             btnPosition[i] = new Button();
             btnPosition[i].setPrefSize(width, height);
-            btnPosition[i].setLayoutX(i / 3 * width);
+            btnPosition[i].setLayoutX(i % 3 * width);
             btnPosition[i].setLayoutY(i / 3 * height);
             final int pos = i;
             btnPosition[i].setOnAction(e -> {selected(pos);});
@@ -139,8 +139,7 @@ public class TicTacToe extends Application {
         }
         if (btnPosition[2].getText().equals(btnPosition[4].getText()) &&
             btnPosition[4].getText().equals(btnPosition[6].getText()) &&
-            !btnPosition[6].getText().isEmpty()
-        ) {
+            !btnPosition[6].getText().isEmpty()) {
             hasWinner = true;
         }
 

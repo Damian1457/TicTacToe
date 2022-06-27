@@ -26,10 +26,13 @@ tasks.withType(JavaCompile) {
 application {
     mainModule = 'com.example.tictactoe'
     mainClass = 'com.example.tictactoe.TicTacToe'
+    mainClass = 'com.example.tictactoe.TicTacToe2'
+    mainClass = 'com.example.tictactoe.Loops'
+
 }
 
 javafx {
-    version = '17.0.1'
+    version = '17'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
