@@ -28,6 +28,7 @@ application {
     mainClass = 'com.example.tictactoe.TicTacToe'
     mainClass = 'com.example.tictactoe.TicTacToe2'
     mainClass = 'com.example.tictactoe.Loops'
+    mainClass = 'com.example.tictactoe.FindWinner'
 
 }
 

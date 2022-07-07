@@ -4,24 +4,27 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.List;
+import static com.example.tictactoe.MakeMove.makeMove;
 
+
+//   1. Nie wiem jak użyć pętli na buttonach.
+//   2. Nie wiem jak nie używać metod statycznych.
+//   3. Generalnie chciałbym skrócić kod do maksimum.
+//   4. Czy zawsze muszę przekazywać jako argument w metodzie tą listę? - (List<Button> theNewButtonsList)
+//   5. Co mam zrobić żeby nie było dwóch metod - findWinnerA i findWinnerComputer?
+//   6. Czy zawsze powinno być w metodach - void, czy może metoda powinna coś zwracać?
 
 public class TicTacToe2 extends Application {
 
     String player = "PlayerA";
     Button buttonQuit = new Button("Quit Game");
     Button buttonNew = new Button("New Game");
-    Label label = new Label();
 
     public boolean isPlayerA() {
         return player.equals("PlayerA");
@@ -50,6 +53,8 @@ public class TicTacToe2 extends Application {
         tneNewButtonsList.add(button7);
         tneNewButtonsList.add(button8);
         tneNewButtonsList.add(button9);
+
+
 
         //button1
         button1.setOnMouseClicked(e -> {
@@ -138,222 +143,6 @@ public class TicTacToe2 extends Application {
         primaryStage.setTitle("Tic Tac Toe");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    public void makeMove(Button dupa, List<Button> theNewButtonsList) {
-
-        //we assign text to whatever button has been passed to us
-        dupa.setText("O");
-
-
-        //We check the winning in the horizontal lines
-        //checkRows
-        if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(1).getText()) &&
-                theNewButtonsList.get(1).getText().equals(theNewButtonsList.get(2).getText()) && theNewButtonsList.get(0).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-
-        } else if (theNewButtonsList.get(3).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(5).getText()) && theNewButtonsList.get(3).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        } else if (theNewButtonsList.get(6).getText().equals(theNewButtonsList.get(7).getText()) &&
-                theNewButtonsList.get(7).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(6).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        }
-        // We check the winnings in vertical lines
-        //checkColumns
-        else if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(3).getText()) &&
-                theNewButtonsList.get(3).getText().equals(theNewButtonsList.get(6).getText()) && theNewButtonsList.get(0).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        } else if (theNewButtonsList.get(1).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(7).getText()) && theNewButtonsList.get(1).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-
-        } else if (theNewButtonsList.get(2).getText().equals(theNewButtonsList.get(5).getText()) &&
-                theNewButtonsList.get(5).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(2).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-        }
-        //We check the winnings in diagonal lines
-        //checkDiagonals
-        else if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(0).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-
-        } else if (theNewButtonsList.get(2).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(6).getText()) && theNewButtonsList.get(2).getText().equals("O")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Player A won", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        }
-
-
-        //We create the list with empty button / field
-        List<Button> theEmptyButtonsList = new ArrayList<>();
-
-        //We change the player, disabled the active button
-        player = "Computer";
-        dupa.setDisable(true);
-
-        //We loop through all the empty fields and add them to the new list
-        for (int i = 0; i < theNewButtonsList.size(); i++) {
-            if (theNewButtonsList.get(i).getText().equals("")) {
-                theEmptyButtonsList.add(theNewButtonsList.get(i));
-
-
-            }
-
-        }
-        System.out.println(theEmptyButtonsList.size());
-
-        if (!theEmptyButtonsList.isEmpty()) {
-            //We add the first empty field to a button, and when the computer moves, the inscription X, which has been assigned, will appear
-            Button newButton = theEmptyButtonsList.get(0);
-            newButton.setText("X");
-            System.out.println(theNewButtonsList);
-            newButton.setDisable(true);
-        }
-
-
-        //checkRows
-        if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(1).getText()) &&
-                theNewButtonsList.get(1).getText().equals(theNewButtonsList.get(2).getText()) && theNewButtonsList.get(0).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-
-        } else if (theNewButtonsList.get(3).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(5).getText()) && theNewButtonsList.get(3).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        } else if (theNewButtonsList.get(6).getText().equals(theNewButtonsList.get(7).getText()) &&
-                theNewButtonsList.get(7).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(6).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-        }
-
-        //checkColumns
-        else if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(3).getText()) &&
-                theNewButtonsList.get(3).getText().equals(theNewButtonsList.get(6).getText()) && theNewButtonsList.get(0).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-            }
-
-
-        } else if (theNewButtonsList.get(1).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(7).getText()) && theNewButtonsList.get(1).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-                if (i == theNewButtonsList.size() - 1) {
-                    theNewButtonsList.get(i).setDisable(true);
-                }
-            }
-
-
-        } else if (theNewButtonsList.get(2).getText().equals(theNewButtonsList.get(5).getText()) &&
-                theNewButtonsList.get(5).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(2).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-                if (i == theNewButtonsList.size() - 1) {
-                    theNewButtonsList.get(i).setDisable(true);
-                }
-            }
-
-        }
-
-        //checkDiagonals
-        else if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(8).getText()) && theNewButtonsList.get(0).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-                if (i == theNewButtonsList.size() - 1) {
-                    theNewButtonsList.get(i).setDisable(true);
-                }
-            }
-
-
-        } else if (theNewButtonsList.get(2).getText().equals(theNewButtonsList.get(4).getText()) &&
-                theNewButtonsList.get(4).getText().equals(theNewButtonsList.get(6).getText()) && theNewButtonsList.get(2).getText().equals("X")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Computer won!", ButtonType.OK);
-            alert.show();
-            for (int i = 0; i < theNewButtonsList.size(); i++) {
-                theNewButtonsList.get(i).setDisable(true);
-
-            }
-
-
-        }
-        player = "PlayerA";
-
-
-
-
-
     }
 
 
