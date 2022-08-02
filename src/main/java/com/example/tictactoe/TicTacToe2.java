@@ -10,10 +10,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
-import static com.example.tictactoe.MakeMove.makeMove;
 
 
-//   1. Nie wiem jak użyć pętli na buttonach.
+
+//   1. Nie wiem jak użyć pętli na buttonach -  da się, ale nie ma pot.
 //   2. Nie wiem jak nie używać metod statycznych.
 //   3. Generalnie chciałbym skrócić kod do maksimum.
 //   4. Czy zawsze muszę przekazywać jako argument w metodzie tą listę? - (List<Button> theNewButtonsList)
@@ -32,6 +32,10 @@ public class TicTacToe2 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        ComputerMove computerMove = new ComputerMove();
+        MakeMove makeMove = new MakeMove(computerMove);
+
 
         Button button1 = new Button();
         Button button2 = new Button();
@@ -58,47 +62,47 @@ public class TicTacToe2 extends Application {
 
         //button1
         button1.setOnMouseClicked(e -> {
-            makeMove(button1, tneNewButtonsList);
+            makeMove.makeMove(button1, tneNewButtonsList);
         });
 
         //button2
         button2.setOnMouseClicked(e -> {
-            makeMove(button2, tneNewButtonsList);
+            makeMove.makeMove(button2, tneNewButtonsList);
         });
 
         //button3
         button3.setOnMouseClicked(e -> {
-            makeMove(button3, tneNewButtonsList);
+            makeMove.makeMove(button3, tneNewButtonsList);
         });
 
         //button4
         button4.setOnMouseClicked(e -> {
-            makeMove(button4, tneNewButtonsList);
+            makeMove.makeMove(button4, tneNewButtonsList);
         });
 
         //button5
         button5.setOnMouseClicked(e -> {
-            makeMove(button5, tneNewButtonsList);
+            makeMove.makeMove(button5, tneNewButtonsList);
         });
 
         //button6
         button6.setOnMouseClicked(e -> {
-            makeMove(button6, tneNewButtonsList);
+            makeMove.makeMove(button6, tneNewButtonsList);
         });
 
         //button7
         button7.setOnMouseClicked(e -> {
-            makeMove(button7, tneNewButtonsList);
+            makeMove.makeMove(button7, tneNewButtonsList);
         });
 
         //button8
         button8.setOnMouseClicked(e -> {
-            makeMove(button8, tneNewButtonsList);
+            makeMove.makeMove(button8, tneNewButtonsList);
         });
 
         //button9
         button9.setOnMouseClicked(e -> {
-            makeMove(button9, tneNewButtonsList);
+            makeMove.makeMove(button9, tneNewButtonsList);
         });
 
         //guitButton

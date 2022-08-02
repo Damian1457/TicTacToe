@@ -8,6 +8,10 @@ import java.util.List;
 
 public class FindWinner {
 
+
+    //Wynieść do argumentów metody "X" i "0" oraz "Computer won" i "PlayerA won"!
+
+
     public static void checkDiagonalsTwo(List<Button> theNewButtonsList) {
 
         if (theNewButtonsList.get(0).getText().equals(theNewButtonsList.get(4).getText()) &&
