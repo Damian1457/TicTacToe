@@ -12,20 +12,14 @@ public class FindWinnerComputer {
 
     public static void findWinnerA(List<Button> theNewButtonsList) {
         if (player.contains("PlayerA")) {
-            checkRows(theNewButtonsList);
-            checkColumns(theNewButtonsList);
-            checkDiagonals(theNewButtonsList);
+            checkRowsTwo(theNewButtonsList, "Player A won!", "O");
+            checkColumnsTwo(theNewButtonsList, "Player A won!", "O");
+            checkDiagonalsTwo(theNewButtonsList, "Player A won!", "O");
         } else {
-            checkRowsTwo(theNewButtonsList);
-            checkColumnsTwo(theNewButtonsList);
-            checkDiagonalsTwo(theNewButtonsList);
+            checkRowsTwo(theNewButtonsList, "Computer won!", "X");
+            checkColumnsTwo(theNewButtonsList, "Computer won!", "X");
+            checkDiagonalsTwo(theNewButtonsList, "Computer won!", "X");
         }
     }
-
-//    public static void findWinnerComputer(List<Button> theNewButtonsList) {
-//        checkRowsTwo(theNewButtonsList);
-//        checkColumnsTwo(theNewButtonsList);
-//        checkDiagonalsTwo(theNewButtonsList);
-//    }
 
 }

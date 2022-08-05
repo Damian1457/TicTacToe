@@ -12,14 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-//   1. Nie wiem jak użyć pętli na buttonach -  da się, ale nie ma pot.
-//   2. Nie wiem jak nie używać metod statycznych.
-//   3. Generalnie chciałbym skrócić kod do maksimum.
-//   4. Czy zawsze muszę przekazywać jako argument w metodzie tą listę? - (List<Button> theNewButtonsList)
-//   5. Co mam zrobić żeby nie było dwóch metod - findWinnerA i findWinnerComputer?
-//   6. Czy zawsze powinno być w metodach - void, czy może metoda powinna coś zwracać?
-
 public class TicTacToe2 extends Application {
 
     String player = "PlayerA";
