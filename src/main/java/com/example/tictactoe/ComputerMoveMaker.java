@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 
 import java.util.List;
 
-public class ComputerMove {
+public class ComputerMoveMaker {
 
     public void computerMove(List<Button> theEmptyButtonsList) {
         if (!theEmptyButtonsList.isEmpty()) {

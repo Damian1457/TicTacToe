@@ -6,7 +6,7 @@ import javafx.scene.control.ButtonType;
 
 import java.util.List;
 
-public class FindWinner {
+public class WinnerFinder {
 
 
 

@@ -7,16 +7,16 @@ import java.util.List;
 
 
 
-import static com.example.tictactoe.EmptyButtonList.theEmptyButtonList;
-import static com.example.tictactoe.FindWinnerComputer.findWinnerA;
+import static com.example.tictactoe.EmptyButtonListSelector.theEmptyButtonList;
+import static com.example.tictactoe.ComputerWinnerFinder.findWinnerA;
 
 
-public class MakeMove {
+public class MoveMaker {
 
     static String player = "PlayerA";
-    private final ComputerMove computerMove;
+    private final ComputerMoveMaker computerMove;
 
-    public MakeMove(ComputerMove computerMove) {
+    public MoveMaker(ComputerMoveMaker computerMove) {
         this.computerMove = computerMove;
     }
 

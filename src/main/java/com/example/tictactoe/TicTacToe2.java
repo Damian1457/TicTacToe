@@ -25,8 +25,8 @@ public class TicTacToe2 extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        ComputerMove computerMove = new ComputerMove();
-        MakeMove makeMove = new MakeMove(computerMove);
+        ComputerMoveMaker computerMove = new ComputerMoveMaker();
+        MoveMaker makeMove = new MoveMaker(computerMove);
 
 
         Button button1 = new Button();

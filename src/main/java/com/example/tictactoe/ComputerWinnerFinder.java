@@ -4,11 +4,11 @@ import javafx.scene.control.Button;
 
 import java.util.List;
 
-import static com.example.tictactoe.FindWinner.*;
-import static com.example.tictactoe.FindWinner.checkDiagonalsTwo;
-import static com.example.tictactoe.MakeMove.player;
+import static com.example.tictactoe.WinnerFinder.*;
+import static com.example.tictactoe.WinnerFinder.checkDiagonalsTwo;
+import static com.example.tictactoe.MoveMaker.player;
 
-public class FindWinnerComputer {
+public class ComputerWinnerFinder {
 
     public static void findWinnerA(List<Button> theNewButtonsList) {
         if (player.contains("PlayerA")) {

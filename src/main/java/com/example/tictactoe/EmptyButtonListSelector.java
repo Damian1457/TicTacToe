@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmptyButtonList {
+public class EmptyButtonListSelector {
 
     //Tutaj mogę zrobić zwracanie newButtonsList!
 
